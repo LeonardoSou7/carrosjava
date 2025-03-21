@@ -1,29 +1,34 @@
-package com.mycompany.aula20250317;
+package com.mycompany.projetocarro;
 
 
 public class Carro {
-    private String placa;
     private String modelo;
-    Motorista motorista;
-    private int anoFabricacao;
-    
+    private Motorista motorista;
+    private final Motor motor;
+    private int vezesUtilizado = 0;
 
-    public String getModelo() {
-        return modelo;
+    public Carro(String modelo, Motorista motorista, String potencia, String tipoCombustivel){
+        this.modelo = modelo;
+        this.motorista = motorista;
+        this.motor = new Motor(potencia, tipoCombustivel);
+        this.vezesUtilizado++;
     }
-    
-    public String getPlaca() {
-        return placa;
+
+    public void setMotorista(Motorista motorista) {
+        this.motorista = motorista;
+        this.vezesUtilizado++;
     }
-    
-    public int getAnoFabricacao() {
-        return anoFabricacao;
+
+    public int getVezesUtilizado() {
+        return vezesUtilizado;
     }
-    
-    
-    
-    public Carro(String placa, String modelo, String motorista) {
-        
+
+    @Override
+    public String toString() {
+        return "Carro {" +
+                "modelo = " + modelo +
+                ", motorista = " + motorista +
+                ", motor = " + motor +
+                ", vezesUtilizado = " + vezesUtilizado + '}';
     }
-    
 }

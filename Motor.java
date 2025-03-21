@@ -1,24 +1,19 @@
-package com.mycompany.aula20250317;
+package com.mycompany.projetocarro;
 
 
 public class Motor {
-    String carroPlaca;
-    String potencia;
-    String tipoCombustivel;
+    private final String potencia;
+    private final String tipocombustivel;
 
-        
-        
-    public String getCarroPlaca() {
-        return carroPlaca;
+    public Motor(String potencia, String tipocombustivel) {
+        this.potencia = potencia;
+        this.tipocombustivel = tipocombustivel;
     }
 
-    public String getPotencia() {
-        return potencia;
+    @Override
+    public String toString() {
+        return "Motor {" +
+                "potencia = " + potencia +
+                ", tipocombustivel = " + tipocombustivel + '}';
     }
-
-    public String getTipoCombustivel() {
-        return tipoCombustivel;
-    }
-      
-    
 }
